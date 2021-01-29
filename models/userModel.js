@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const validator = require("validator");
+const bcrypt = require("bcryptjs");
 
 const userSchema = new mongoose.Schema({
   email: {
@@ -61,7 +62,6 @@ userSchema.methods.createPasswordResetToken = function() {
     .update(resetToken)
     .digest("hex");
   this.passwordResetExpires = Date.now() + 10 * 60 * 1000; //time is in msec
-  console.log({ resetToken }, this.passwordResetToken);
   return resetToken;
 };
 
