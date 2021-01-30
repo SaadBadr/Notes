@@ -25,6 +25,12 @@ const userSchema = new mongoose.Schema({
       },
       message: "password should matches",
     },
+    notes: [
+      {
+        type: mongoose.Schema.ObjectId,
+        ref: "Note",
+      },
+    ],
   },
   passwordChangedAt: Date,
   passwordResetToken: String,

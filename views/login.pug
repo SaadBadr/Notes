@@ -1,0 +1,17 @@
+extends base
+
+
+block title
+    title Login
+block content
+    #main
+        form.form
+            div.label login form
+            div.username
+                input#email(type="text" placeholder="email")
+            div.password
+                input#password(type="password" placeholder="password")
+            button login
+            p
+                | not a member
+                a(href="#") Sing Up now
