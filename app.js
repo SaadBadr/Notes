@@ -12,6 +12,7 @@ const globalErrorHandler = require("./controllers/errorController");
 
 const viewRouter = require("./routes/viewRoutes");
 const userRouter = require("./routes/userRoutes");
+const noteRouter = require("./routes/noteRoutes");
 
 const app = express();
 
@@ -57,6 +58,7 @@ app.use(
 
 app.use("/", viewRouter);
 app.use("/api/v1/users", userRouter);
+app.use("/api/v1/notes", noteRouter);
 app.use(express.static("public"));
 
 app.all("*", (req, res, next) => {
