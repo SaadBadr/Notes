@@ -11,7 +11,7 @@ const login = async (email, password) => {
 
     if (res.data.status === "success") {
       alert("Logged in successfully!");
-      location.assign("/");
+      location.assign("/notes");
     }
   } catch (error) {
     alert(error.response.data.message);

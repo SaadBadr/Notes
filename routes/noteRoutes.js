@@ -12,6 +12,7 @@ router
 router
   .route("/:id")
   .patch(authController.protect, noteController.editNote)
-  .delete(authController.protect, noteController.deleteNote);
+  .delete(authController.protect, noteController.deleteNote)
+  .get(authController.protect, noteController.getNote);
 
 module.exports = router;

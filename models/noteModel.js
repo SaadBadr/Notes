@@ -8,6 +8,11 @@ const noteSchema = new mongoose.Schema({
     type: String,
     default: "",
   },
+  creator: {
+    type: mongoose.Schema.ObjectId,
+    ref: "User",
+    required: true,
+  },
 });
 
 const Note = mongoose.model("Note", noteSchema);

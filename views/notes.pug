@@ -1,0 +1,16 @@
+extends base
+
+
+block title
+    title Login
+block content
+    h1 Notes
+    table(style='width:100%', border='1')
+        tr
+            th: h2 title
+            th: h2 share
+        each note in notes
+            tr
+                td: a(href=`note/${note._id}`) #{note.title}
+                td: button(id=note._id, class="share_btn") click here!
+
